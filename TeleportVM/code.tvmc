@@ -1,0 +1,54 @@
+createlocal 0 number #result
+createlocal 1 number #start1
+createlocal 2 number #start2
+createlocal 3 number #number of iters
+createlocal 4 number #inc1
+createlocal 5 number #inc2
+createlocal 6 number #iter dec
+createlocal 7 bool   #finished
+createlocal 8 number #finish
+createlocal 9 number #mult
+setlocal 0 1
+setlocal 1 2
+setlocal 2 1
+setlocal 3 10000
+setlocal 4 2
+setlocal 5 2
+setlocal 6 1
+setlocal 7 false
+setlocal 8 0
+setlocal 9 2
+label 0
+createargs 0 1
+pushresult 0
+call mult
+createargs 0 2
+pushresult 0
+call div
+createargs 2 5
+pushresult 2
+call add
+createargs 0 1
+pushresult 0
+call mult
+createargs 0 2
+pushresult 0
+call div
+createargs 1 4
+pushresult 1
+call add
+createargs 3 6
+pushresult 3
+call sub
+createargs 3 8
+pushresult 7
+eval equal
+if 7
+goto 1
+goto 0
+label 1
+createargs 0 9
+pushresult 0
+call mult
+createargs 0
+call print
