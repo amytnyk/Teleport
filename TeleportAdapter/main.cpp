@@ -128,6 +128,54 @@ void convert(const std::string& in_path, const std::string& out_path) {
 			pushChar(bytecode, 0xA);
 			pushInt(bytecode, stoi(cmds[1]));
 		}
+		else if (main_cmd == "add") {
+			pushChar(bytecode, 0xB);
+			pushInt(bytecode, stoi(cmds[1]));
+			pushInt(bytecode, stoi(cmds[2]));
+			pushInt(bytecode, stoi(cmds[3]));
+		}
+		else if (main_cmd == "inc") {
+			pushChar(bytecode, 0xC);
+			pushInt(bytecode, stoi(cmds[1]));
+			pushInt(bytecode, stoi(cmds[2]));
+			pushNumber(bytecode, stod(cmds[3]));
+		}
+		else if (main_cmd == "sub") {
+			pushChar(bytecode, 0xD);
+			pushInt(bytecode, stoi(cmds[1]));
+			pushInt(bytecode, stoi(cmds[2]));
+			pushInt(bytecode, stoi(cmds[3]));
+		}
+		else if (main_cmd == "dec") {
+			pushChar(bytecode, 0xE);
+			pushInt(bytecode, stoi(cmds[1]));
+			pushInt(bytecode, stoi(cmds[2]));
+			pushNumber(bytecode, stod(cmds[3]));
+		}
+		else if (main_cmd == "mult") {
+			pushChar(bytecode, 0xF);
+			pushInt(bytecode, stoi(cmds[1]));
+			pushInt(bytecode, stoi(cmds[2]));
+			pushInt(bytecode, stoi(cmds[3]));
+		}
+		else if (main_cmd == "mulc") {
+			pushChar(bytecode, 0x10);
+			pushInt(bytecode, stoi(cmds[1]));
+			pushInt(bytecode, stoi(cmds[2]));
+			pushNumber(bytecode, stod(cmds[3]));
+		}
+		else if (main_cmd == "div") {
+			pushChar(bytecode, 0x11);
+			pushInt(bytecode, stoi(cmds[1]));
+			pushInt(bytecode, stoi(cmds[2]));
+			pushInt(bytecode, stoi(cmds[3]));
+		}
+		else if (main_cmd == "divc") {
+			pushChar(bytecode, 0x12);
+			pushInt(bytecode, stoi(cmds[1]));
+			pushInt(bytecode, stoi(cmds[2]));
+			pushNumber(bytecode, stod(cmds[3]));
+		}
 	}
 
 	std::ofstream out(out_path, std::ios_base::binary);

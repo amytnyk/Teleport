@@ -56,7 +56,7 @@ namespace Teleport {
 				int label_id = readInt(vm_code, i + 1);
 				labels[label_id] = code_pointer;
 			}
-			else if (cmd > 0xA) {
+			else if (cmd > 0x12) {
 				// Error
 			}
 		}

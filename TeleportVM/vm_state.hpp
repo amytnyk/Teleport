@@ -16,7 +16,7 @@ namespace Teleport {
 		bool is_variable_initialized(int id);
 		bool is_initialized();
 		void init(const std::vector<byte>&);
-		const std::map<int, int> command_size = { { 0x0, 21 },  { 0x1, 9 }, { 0x2, 9 }, { 0x3, 5 }, { 0x4, 6 }, { 0x5, 5 }, { 0x6, 5 }, { 0x7, 5 }, { 0x08, 2 }, { 0x9, 2 }, { 0xA, 5 } };
+		const std::map<int, int> command_size = { { 0x0, 21 },  { 0x1, 9 }, { 0x2, 9 }, { 0x3, 5 }, { 0x4, 6 }, { 0x5, 5 }, { 0x6, 5 }, { 0x7, 5 }, { 0x08, 2 }, { 0x9, 2 }, { 0xA, 5 }, { 0xB, 13 }, { 0xC, 25 }, { 0xD, 13 }, { 0xE, 25 }, { 0xF, 13 }, { 0x10, 25 }, { 0x11, 13 }, { 0x12, 25 } };
 
 		std::vector<byte> vm_code;
 		Memory memory;

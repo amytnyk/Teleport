@@ -162,6 +162,38 @@ namespace Teleport {
 
 					state.memory.set_bool(result, res);
 				}
+				else if (cmd == 0xB) { // add
+					double r = state.memory.get_double(readInt(state.vm_code, i + 5)) + state.memory.get_double(readInt(state.vm_code, i + 9));
+					state.memory.set_double(readInt(state.vm_code, i + 1), r);
+				}
+				else if (cmd == 0xC) { // inc
+					double r = state.memory.get_double(readInt(state.vm_code, i + 5)) + readDouble(state.vm_code, i + 9);
+					state.memory.set_double(readInt(state.vm_code, i + 1), r);
+				}
+				else if (cmd == 0xD) { // sub
+					double r = state.memory.get_double(readInt(state.vm_code, i + 5)) - state.memory.get_double(readInt(state.vm_code, i + 9));
+					state.memory.set_double(readInt(state.vm_code, i + 1), r);
+				}
+				else if (cmd == 0xE) { // dec
+					double r = state.memory.get_double(readInt(state.vm_code, i + 5)) - readDouble(state.vm_code, i + 9);
+					state.memory.set_double(readInt(state.vm_code, i + 1), r);
+				}
+				else if (cmd == 0xF) { // mult
+					double r = state.memory.get_double(readInt(state.vm_code, i + 5)) * state.memory.get_double(readInt(state.vm_code, i + 9));
+					state.memory.set_double(readInt(state.vm_code, i + 1), r);
+				}
+				else if (cmd == 0x10) { // mulc
+					double r = state.memory.get_double(readInt(state.vm_code, i + 5)) * readDouble(state.vm_code, i + 9);
+					state.memory.set_double(readInt(state.vm_code, i + 1), r);
+				}
+				else if (cmd == 0x11) { // div
+					double r = state.memory.get_double(readInt(state.vm_code, i + 5)) / state.memory.get_double(readInt(state.vm_code, i + 9));
+					state.memory.set_double(readInt(state.vm_code, i + 1), r);
+				}
+				else if (cmd == 0x12) { // divc
+					double r = state.memory.get_double(readInt(state.vm_code, i + 5)) / readDouble(state.vm_code, i + 9);
+					state.memory.set_double(readInt(state.vm_code, i + 1), r);
+				}
 			}
 			else {
 				exec_next_cmd = true;
